@@ -23,13 +23,8 @@ variable "proxmox_endpoint" {
   description = "Proxmox API endpoint URL"
 }
 
-variable "proxmox_username" {
+variable "proxmox_api_token" {
   type = string
-  description = "Proxmox username"
-}
-
-variable "proxmox_password" {
-  type = string
-  description = "Proxmox password"
+  description = "Proxmox API token (format: USER@REALM!TOKENID=SECRET)"
   sensitive = true
 }
