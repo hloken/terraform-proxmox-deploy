@@ -17,3 +17,19 @@ variable "talos_worker_01_ip_addr" {
   type    = string
   default = "10.1.1.11"
 }
+
+variable "proxmox_endpoint" {
+  type = string
+  description = "Proxmox API endpoint URL"
+}
+
+variable "proxmox_username" {
+  type = string
+  description = "Proxmox username"
+}
+
+variable "proxmox_password" {
+  type = string
+  description = "Proxmox password"
+  sensitive = true
+}
