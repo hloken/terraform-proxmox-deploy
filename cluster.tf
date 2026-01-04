@@ -8,7 +8,7 @@ data "talos_client_configuration" "talosconfig" {
 
 data "talos_machine_configuration" "machineconfig_cp" {
     cluster_name = var.cluster_name
-    cluster_endpoint = "httos://${var.talos_cp_01_ip_addr}:6443"
+    cluster_endpoint = "https://${var.talos_cp_01_ip_addr}:6443"
     machine_type = "controlplane"
     machine_secrets = talos_machine_secrets.machine_secrets.machine_secrets
 }
@@ -23,7 +23,7 @@ resource "talos_machine_configuration_apply" "cp_config_apply" {
 
 data "talos_machine_configuration" "machineconfig_worker" {
     cluster_name = var.cluster_name
-    cluster_endpoint = "httos://${var.talos_cp_01_ip_addr}:6443"
+    cluster_endpoint = "https://${var.talos_cp_01_ip_addr}:6443"
     machine_type = "worker"
     machine_secrets = talos_machine_secrets.machine_secrets.machine_secrets
 }
