@@ -23,7 +23,7 @@ resource "proxmox_virtual_environment_vm" "talos_cp_01" {
     }
 
     disk {
-        datastore_id = "local-zfs"
+        datastore_id = "local-lvm"
         file_id = proxmox_virtual_environment_download_file.talos_nocloud_image.id
         file_format = "raw"
         interface = "virtio0"
@@ -35,7 +35,7 @@ resource "proxmox_virtual_environment_vm" "talos_cp_01" {
     }
 
     initialization {
-        datastore_id = "local-zfs"
+        datastore_id = "local-lvm"
         ip_config {
             ipv4 {
                 address = "${var.talos_cp_01_ip_addr}/24"
@@ -74,7 +74,7 @@ resource "proxmox_virtual_environment_vm" "talos_worker_01" {
     }
 
     disk {
-        datastore_id = "local-zfs"
+        datastore_id = "local-lvm"
         file_id = proxmox_virtual_environment_download_file.talos_nocloud_image.id
         file_format = "raw"
         interface = "virtio0"
@@ -86,7 +86,7 @@ resource "proxmox_virtual_environment_vm" "talos_worker_01" {
     }
 
     initialization {
-        datastore_id = "local-zfs"
+        datastore_id = "local-lvm"
         ip_config {
             ipv4 {
                 address = "${var.talos_worker_01_ip_addr}/24"
