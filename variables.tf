@@ -23,6 +23,17 @@ variable "proxmox_endpoint" {
   description = "Proxmox API endpoint URL"
 }
 
+variable "proxmox_endpoint_halnuc2" {
+  type        = string
+  description = "Proxmox API endpoint URL for halnuc2"
+  default     = "https://10.0.0.51:8006"
+}
+
+variable "talos_worker_02_ip_addr" {
+  type    = string
+  default = "10.0.0.212"
+}
+
 variable "proxmox_api_token" {
   type = string
   description = "Proxmox API token (format: USER@REALM!TOKENID=SECRET)"
